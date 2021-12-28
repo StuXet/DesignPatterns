@@ -6,6 +6,8 @@ public class Door : MonoBehaviour
 {
     public GameObject key;
     public GameObject player;
+    public int pY;
+
     PlayerCtrlr playerCtrlr;
     
 
@@ -14,17 +16,22 @@ public class Door : MonoBehaviour
         playerCtrlr = player.GetComponent<PlayerCtrlr>(); 
     }
 
+    private void Update()
+    {
+        pY = Mathf.RoundToInt(player.transform.eulerAngles.y);
+    }
+
 
     private void OnMouseDown()
     {
         if (playerCtrlr.inventory.Contains(key)) 
         {
-            if (playerCtrlr.currentRoom.name == "BrownRoom" && player.transform.eulerAngles.y == 90)
+            if (playerCtrlr.currentRoom.name == "BrownRoom" && pY == 90)
             {
                 playerCtrlr.SwitchRoom(2);
                 Debug.Log("moved to red room");
             }
-            else if (playerCtrlr.currentRoom.name == "BrownRoom" && player.transform.eulerAngles.y == -180f)
+            else if (playerCtrlr.currentRoom.name == "BrownRoom" && pY == 180)
             {
                 playerCtrlr.SwitchRoom(1);
                 Debug.Log("moved to green room");
