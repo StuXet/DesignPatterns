@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmmitRay : MonoBehaviour
+public class EmmitRayForward : MonoBehaviour
 {
     [Range(0f, 10f)]
     public float range;
