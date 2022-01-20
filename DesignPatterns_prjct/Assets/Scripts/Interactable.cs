@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
-    public 
+    public GameObject key;
+    public Player player;
+    private List<GameObject> playerInventory;
 
-    // Start is called before the first frame update
-    void Start()
+    public virtual void HandleInteraction()
     {
-        
-    }
+        playerInventory = player.inventory;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Objects functionality
     }
+   
 }
