@@ -5,6 +5,11 @@ using UnityEngine;
 public class DoorKnob : Interactable
 {
     public Room roomToMove;
+    public Animator anim;
+    private void OnMouseDown()
+    {
+        HandleInteraction();
+    }
 
     public override void HandleInteraction()
     {
@@ -20,7 +25,7 @@ public class DoorKnob : Interactable
             }
             else
             {
-                //**OPTIONAL** play locked animation
+                anim.SetTrigger("Shake");
             }
         }
     }

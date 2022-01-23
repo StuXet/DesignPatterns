@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmmitRayForward : MonoBehaviour
+public class PlayerPos : MonoBehaviour
 {
+    [Header("Gizmo Ray")]
     [Range(0f, 10f)]
-    public float range;
+    public float range = 5;
+
+    private void Start()
+    {
+       GetComponent<MeshRenderer>().enabled = false;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
