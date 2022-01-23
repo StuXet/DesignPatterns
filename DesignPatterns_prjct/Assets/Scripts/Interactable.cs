@@ -8,6 +8,8 @@ public abstract class Interactable : MonoBehaviour
     public Player player;
     private List<GameObject> playerInventory;
 
+
+
     public virtual void HandleInteraction()
     {
         playerInventory = player.inventory;

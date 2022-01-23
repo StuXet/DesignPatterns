@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Controller Settings")]
-    public GameObject currentRoom;
+    public Room currentRoom;
+    public Camera cam;
     [Tooltip("List of positions the player can move to in each specific room")]
     public List<Transform> positions;
-    int angleCounter;
+    int camPosCounter;
 
     [Header("Items settings")]
     public List<GameObject> inventory;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        positions = currentRoom.playerPos;
         transform.position = positions[0].position;
         transform.rotation = positions[0].rotation;
     }
@@ -26,34 +28,48 @@ public class Player : MonoBehaviour
         
     }
 
-    public void ChangeRoom(GameObject nextRoom)
+    public void ChangeRoom(Room nextRoom)
     {
-        angleCounter = 0;
+        camPosCounter = 0;
         currentRoom = nextRoom;
-        positions = nextRoom.GetComponent<Room>().playerPos;
-        transform.position = positions[angleCounter].position;
-        transform.rotation = positions[angleCounter].rotation;
+        positions = nextRoom.playerPos;
+        transform.position = positions[camPosCounter].position;
+        transform.rotation = positions[camPosCounter].rotation;
     }
 
-    public void NextAngle()
+    public void NextPos()
     {
-        angleCounter++;
-        if (angleCounter + 1 > positions.Count)
+        camPosCounter++;
+        if (camPosCounter + 1 > positions.Count)
         {
-            angleCounter = 0;
+            camPosCounter = 0;
         }
-        transform.position = positions[angleCounter].position;
-        transform.rotation = positions[angleCounter].rotation;
+        transform.position = positions[camPosCounter].position;
+        transform.rotation = positions[camPosCounter].rotation;
     }
 
-    public void PreviousRoom()
+    public void PreviousPos()
     {
-        angleCounter--;
-        if (angleCounter < 0)
+        camPosCounter--;
+        if (camPosCounter < 0)
         {
-            angleCounter = positions.Count - 1;
+            camPosCounter = positions.Count - 1;
         }
-        transform.position = positions[angleCounter].position;
-        transform.rotation = positions[angleCounter].rotation;
+        transform.position = positions[camPosCounter].position;
+        transform.rotation = positions[camPosCounter].rotation;
+    }
+
+    void ClickOnObject()
+    {
+        if (Input.GetMouseButtonDown(0))
+        { // if left button pressed...
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                // the object identified by hit.transform was clicked
+                // do whatever you want
+            }
+        }
     }
 }
