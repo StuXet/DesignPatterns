@@ -4,9 +4,11 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public GameObject key;
     public Player player;
     private List<GameObject> playerInventory;
+
+    [Header("Optional")]
+    public GameObject key;
 
 
 

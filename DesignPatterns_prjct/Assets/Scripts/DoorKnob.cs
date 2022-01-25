@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class DoorKnob : Interactable
 {
-    public Room roomToMove;
+    Door door;
     public Animator anim;
+
+    private void Awake()
+    {
+        door = transform.parent.GetComponent<Door>();
+    }
     private void OnMouseDown()
     {
-        HandleInteraction();
-    }
-
-    public override void HandleInteraction()
-    {
-        if (key == null)
-        {
-            player.ChangeRoom(roomToMove);
-        }
-        else 
-        {
-            if (player.inventory.Contains(key))
+            if (door.player.inventory.Contains(door.key) || door.key == null)
             {
-                player.ChangeRoom(roomToMove);
+                door.HandleInteraction();
             }
             else
             {
-                anim.SetTrigger("Shake");
+                anim.Play("Shake");
             }
-        }
     }
 }
