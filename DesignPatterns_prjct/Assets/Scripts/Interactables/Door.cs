@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Door : Interactable
 {
-    private Room roomA;
-    private Room roomB;
+    [Tooltip("If true, door will detect nearby room on its own and overwrite the current rooms")]
+    public bool automaticDoorDetection = true;
+
+    public Room roomA;
+    public Room roomB;
     public LayerMask layerMask;
     public float sphereCastRange = 2;
 
+
     private void Awake()
     {
-        Collider[] rooms =  Physics.OverlapSphere(transform.position, sphereCastRange, layerMask);
-        roomA = rooms[0].transform.parent.GetComponent<Room>();
-        roomB = rooms[1].transform.parent.GetComponent<Room>();
+        if (automaticDoorDetection)
+        {
+            Collider[] rooms =  Physics.OverlapSphere(transform.position, sphereCastRange, layerMask);
+            roomA = rooms[0].transform.parent.GetComponent<Room>();
+            roomB = rooms[1].transform.parent.GetComponent<Room>();
+        }
     }
 
     private void OnDrawGizmosSelected()

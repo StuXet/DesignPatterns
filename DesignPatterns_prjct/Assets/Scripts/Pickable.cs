@@ -8,4 +8,9 @@ public class Pickable : Interactable
     {
         HandleInteraction();
     }
+    public override void HandleInteraction()
+    {
+        player.inventory.Add(gameObject);
+        gameObject.SetActive(false);
+    }
 }

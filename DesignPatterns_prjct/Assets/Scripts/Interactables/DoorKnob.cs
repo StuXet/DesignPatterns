@@ -19,7 +19,7 @@ public class DoorKnob : Interactable
             }
             else
             {
-                anim.Play("Shake");
+                anim.SetTrigger("Shake");
             }
     }
 }
