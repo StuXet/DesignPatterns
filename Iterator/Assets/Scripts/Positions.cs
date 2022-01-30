@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Positions 
 {
@@ -18,11 +19,25 @@ public class Positions
     {
         positions.Remove(pos);
     }
-    public void MovePos(int moveStep)
+    public void MovePos(string NextOrBack)
     {
-        iterator.MoveNext(moveStep);
+        if (NextOrBack == "Next")
+        {
+            iterator.MoveNext();
+        }
+        else if (NextOrBack == "Back") 
+        { 
+            iterator.MoveBack();
+        }
+        else
+        {
+            Debug.LogException(new Exception("Unavailable string is being used, try using \"Next\" or \"Back\""));
+        }
     }
-
+    public Vector3 getPos(int index)
+    {
+        return positions[index];
+    }
     public Positions()
     {
         positions = new List<Vector3>();    

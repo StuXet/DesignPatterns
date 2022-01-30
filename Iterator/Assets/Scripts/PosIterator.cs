@@ -12,36 +12,62 @@ public class PosIterator : Vec3Iterator
         return positions[currentIndex];
     }
 
-    public override bool HasMore(int hop)
+    public override bool HasLess()
     {
-        if (positions[currentIndex + hop] != null)
-        {
-            return true;
-        }
-        else
+        if (currentIndex - 1 < 0)
         {
             return false;
         }
+        else
+        {
+            return true;
+        }
     }
 
-    public override Vector3 MoveNext(int hop)
+    public override bool HasMore()
     {
-        if (HasMore(hop))
+        if (currentIndex + 1 >= positions.Count)
         {
-            currentIndex += hop;
+            return false;
         }
         else
         {
-            currentIndex = (currentIndex + hop) % (positions.Count - 1);
+            return true;
         }
-        return positions[currentIndex];
+    }
+
+    public override Vector3 MoveNext()
+    {
+        if (HasMore())
+        {
+            currentIndex ++;
+            return positions[currentIndex];
+        }
+        else
+        {
+            currentIndex = 0;
+            return positions[currentIndex];
+        }
+    }
+
+    public override Vector3 MoveBack()
+    {
+        if (HasLess())
+        {
+            currentIndex--;
+            return positions[currentIndex];
+        }
+        else
+        {
+            currentIndex = positions.Count -1;
+            return positions[currentIndex];
+        }
     }
 
     public override void Reset()
     {
         currentIndex = 0;
     }
-
     public PosIterator(List<Vector3> _pos)
     {
         positions = _pos;
