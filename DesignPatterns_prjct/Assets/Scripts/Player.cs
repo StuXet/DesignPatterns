@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Controller Settings")]
-    public Room currentRoom;
-    public Camera cam;
-    [Tooltip("List of positions the player can move to in each specific room")]
+    public List<GameObject> inventory;
     public List<Transform> positions;
+    public Room currentRoom;
+    [Tooltip("List of positions the player can move to in each specific room")]
     int camPosCounter;
 
-    [Header("Items settings")]
-    public List<GameObject> inventory;
+    private static Player _instance;
+    public static Player Instance { get { return _instance; } }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
