@@ -399,7 +399,7 @@ RectTransform:
   m_GameObject: {fileID: 305277407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_Children:
   - {fileID: 1973460508}
   m_Father: {fileID: 238887570}
@@ -407,8 +407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -224, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -218.25, y: -4.8804}
+  m_SizeDelta: {x: 163.27, y: 41.8172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305277409
 MonoBehaviour:
@@ -612,7 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453386258a0915a449b9912c9d41cd0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clan: {fileID: 0}
   clanNum: 1
   changeClanNameTo: Tigers
 --- !u!4 &665090261
@@ -750,7 +749,7 @@ RectTransform:
   m_GameObject: {fileID: 828274184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_Children:
   - {fileID: 1333939621}
   m_Father: {fileID: 238887570}
@@ -758,8 +757,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 188.46, y: -5.0895}
+  m_SizeDelta: {x: 163.28, y: 42.244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828274186
 MonoBehaviour:
@@ -883,7 +882,7 @@ RectTransform:
   m_GameObject: {fileID: 918261986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_Children:
   - {fileID: 575310494}
   m_Father: {fileID: 238887570}
@@ -891,8 +890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -223, y: 89}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -218.56, y: 80.186}
+  m_SizeDelta: {x: 160.63, y: 46.213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918261988
 MonoBehaviour:
@@ -938,7 +937,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1740382042}
+      - m_Target: {fileID: 2021941619}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: ChangeClanName
         m_Mode: 1
@@ -1100,7 +1099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453386258a0915a449b9912c9d41cd0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clan: {fileID: 0}
   clanNum: 1
   changeClanNameTo: Frogs
 --- !u!4 &1232029807
@@ -1224,7 +1222,7 @@ RectTransform:
   m_GameObject: {fileID: 1533830200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_Children:
   - {fileID: 81634856}
   m_Father: {fileID: 238887570}
@@ -1232,8 +1230,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191, y: 91}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 187.64996, y: 81.40436}
+  m_SizeDelta: {x: 161.63, y: 47.7258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533830202
 MonoBehaviour:
@@ -1358,7 +1356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453386258a0915a449b9912c9d41cd0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clan: {fileID: 0}
   clanNum: 2
   changeClanNameTo: Nachos
 --- !u!4 &1740382043
@@ -1483,7 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453386258a0915a449b9912c9d41cd0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clan: {fileID: 0}
   clanNum: 2
   changeClanNameTo: Human Beings
 --- !u!4 &2021941620

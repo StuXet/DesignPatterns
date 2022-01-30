@@ -20,6 +20,10 @@ public class Player : MonoBehaviour
 
     public void ChangeClanName()
     {
-        clan.id = changeClanNameTo;
+        if (clan.id != changeClanNameTo)
+        {
+            Debug.Log(name + " hanged his clan name from \"" + clan.id + "\" to \"" + changeClanNameTo + "\"");
+            clan.id = changeClanNameTo;
+        }
     }
 }
