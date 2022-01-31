@@ -13,7 +13,7 @@ public class DoorKnob : Interactable
     }
     private void OnMouseDown()
     {
-            if (door.player.inventory.Contains(door.key) || door.key == null)
+            if (player.inventory.Contains(door.key) || door.key == null)
             {
                 door.HandleInteraction();
             }
