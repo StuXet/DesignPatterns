@@ -58,6 +58,4 @@ public class Player : MonoBehaviour
         transform.position = positions[camPosCounter].position;
         transform.rotation = positions[camPosCounter].rotation;
     }
-
-    
 }
