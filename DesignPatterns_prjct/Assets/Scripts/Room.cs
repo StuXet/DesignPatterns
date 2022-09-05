@@ -7,4 +7,15 @@ public class Room : MonoBehaviour
     public List<Transform> playerPos = new List<Transform>();
     public string id;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

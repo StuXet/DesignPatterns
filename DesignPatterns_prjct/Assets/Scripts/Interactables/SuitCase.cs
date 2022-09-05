@@ -15,7 +15,7 @@ public class SuitCase : Interactable
 
     public override void HandleInteraction()
     {
-        if (isClosed && player.inventory.Contains(key))
+        if (isClosed)
         {
             closedSC.SetActive(false);
             openedSC.SetActive(true);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    protected Player player = Player.Instance;
+    public Player player;
 
 
     public GameObject key;

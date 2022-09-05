@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Controller Settings")]
-    public Room currentRoom;
-    public Camera cam;
     [Tooltip("List of positions the player can move to in each specific room")]
     public List<Transform> positions;
     int camPosCounter;
 
-    [Header("Items settings")]
-    public List<GameObject> inventory;
-
     // Start is called before the first frame update
     void Start()
     {
-        positions = currentRoom.playerPos;
         transform.position = positions[0].position;
         transform.rotation = positions[0].rotation;
     }
@@ -25,16 +18,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    public void ChangeRoom(Room nextRoom)
-    {
-        camPosCounter = 0;
-        currentRoom = nextRoom;
-        positions = nextRoom.playerPos;
-        transform.position = positions[camPosCounter].position;
-        transform.rotation = positions[camPosCounter].rotation;
     }
 
     public void NextPos()
